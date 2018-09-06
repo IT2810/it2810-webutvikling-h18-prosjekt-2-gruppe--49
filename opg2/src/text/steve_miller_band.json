@@ -1,0 +1,34 @@
+{
+  "songName" : "Sleeping Giant",
+  "bandName" : "Mastodon",
+  "songVerses" : [
+    {
+      "verse0": [
+        "Time keeps on slippin', slippin', slippin'",
+        "Into the future",
+        "Time keeps on slippin', slippin', slippin'",
+        "Into the future"
+      ],
+      "verse1": [
+        "I want to fly like an eagle",
+        "To the sea",
+        "Fly like an eagle",
+        "Let my spirit carry me"
+      ],
+      "verse2": [
+        "I want to fly like an eagle",
+        "Till I'm free",
+        "Oh, Lord, through the revolution"
+      ],
+      "verse3": [
+        "Feed the babies",
+        "Who don't have enough to eat",
+        "Shoe the children",
+        "With no shoes on their feet",
+        "House the people",
+        "Livin' in the street",
+        "Oh, oh, there's a solution"
+      ]
+    }
+  ]
+}
