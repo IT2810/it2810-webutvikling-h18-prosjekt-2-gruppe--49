@@ -39,3 +39,8 @@
     }
   ]
 }
+
+/*use:
+[...].verse0.join('\n');
+to join multiline string
+*/
