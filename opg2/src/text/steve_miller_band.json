@@ -1,6 +1,6 @@
 {
-  "songName" : "Sleeping Giant",
-  "bandName" : "Mastodon",
+  "songName" : "Fly like an Eagle",
+  "bandName" : "Steve Miller Band",
   "songVerses" : [
     {
       "verse0": [
@@ -32,8 +32,3 @@
     }
   ]
 }
-
-/*use:
-[...].verse0.join('\n');
-to join multiline string
-*/
