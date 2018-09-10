@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import beach_boys from '../public/text/beach_boys';
 
 class App extends Component {
 
@@ -31,14 +30,19 @@ class App extends Component {
               }
           )
     }
-//beach_boys.songVerses.verse0.join('\n')
+
   render() {
-      const {error, isLoaded, items} = this.state;
+      const {error, isLoaded} = this.state;
       if (error) {
           return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
           return <div>Loading...</div>;
       } else {
+          let text = "";
+          for (let i = 0; i < this.state.items.songVerses[0].verse0.length; i++) {
+              text += this.state.items.songVerses[0].verse0[i];
+              text += '\n';
+          }
           return (
               <div className="App">
                   <header className="App-header">
@@ -46,16 +50,12 @@ class App extends Component {
                       <h1 className="App-title">Welcome to React</h1>
                   </header>
                   <div id="text">
-                      <p>
-                          {this.state.items.songVerses[0].verse0[0]}
-                          <br />
-                          {this.state.items.songVerses[0].verse0[1]}
-                      </p>
+                      {text}
                   </div>
               </div>
           );
       }
   }
 }
-//[]
+
 export default App;
