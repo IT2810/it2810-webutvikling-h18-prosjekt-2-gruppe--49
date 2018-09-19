@@ -21,13 +21,13 @@
   justify-content: center;
 }
 
-.App-content {
+.App-display {
   grid-area: a;
   border-style: solid;
   border-width: 2px;
 }
 
-.App-controllers {
+.App-controller {
   grid-area: b;
   border-style: solid;
   border-width: 2px;
