@@ -9,6 +9,15 @@ class Controller extends Component {
         )
     }
 }
+function RadioGroup (props) {
+    return (
+        <div>
+            <Radio name={props.name} value={props.value1} />
+            <Radio name={props.name} value={props.value2} />
+            <Radio name={props.name} value={props.value3} />
+        </div>
+    )
+}
 function Radio (props) {
     return (
         <div>
