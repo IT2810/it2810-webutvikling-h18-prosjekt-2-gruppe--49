@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash'
 
 class Controller extends Component {
     render() {
@@ -21,10 +22,12 @@ function RadioGroup (props) {
     )
 }
 function Radio (props) {
+    const id = _.uniqueId("prefix-");
+
     return (
         <div>
-            <input type="radio" name={props.name} value={props.value} />
-            <label>{props.value}</label>
+            <input id={id} type="radio" name={props.name} value={props.value} />
+            <label for={id}>{props.value}</label>
         </div>
     )
 }
