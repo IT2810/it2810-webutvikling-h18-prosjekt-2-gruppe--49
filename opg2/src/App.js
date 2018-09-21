@@ -8,24 +8,47 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabNumber: 1,
-            songName: "beach_boys",
+            tabNumber: 0,
+            textName: "steve_miller_band",
             imageCategory: "air",
-            soundCategory: "earth"
+            soundCategory: "air"
         };
+
+        this.callBack = this.callBack.bind(this);
+    }
+
+    callBack(name, value) {
+        if (name === "Image") {
+            if (this.state.imageCategory !== value) {
+                this.setState({
+                    imageCategory: value
+                });
+            }
+        } else if (name === "Sound") {
+            if (this.state.soundCategory !== value) {
+                this.setState({
+                    soundCategory: value
+                });
+            }
+        } else if (name === "Text") {
+            if (this.state.textName !== value) {
+                this.setState({
+                    textName: value
+                });
+            }
+        }
     }
 
     render() {
         return (
-
             <div className="App">
                 <header className="App-header">
                     <h1 className="App-title">Group 49</h1>
                 </header>
                 <div className="App-body">
                     <Display tabNumber={this.state.tabNumber} imageCategory={this.state.imageCategory}
-                             songName={this.state.songName} soundCategory={this.state.soundCategory}/>
-                    <Controller/>
+                             textName={this.state.textName} soundCategory={this.state.soundCategory}/>
+                    <Controller callBack={this.callBack}/>
                 </div>
             </div>
         )
