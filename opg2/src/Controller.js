@@ -27,7 +27,7 @@ function RadioGroup(props) {
     return (
         <div className="Controller-RadioGroup">
             <div className="Controller-Header">{props.name}</div>
-            <Radio callBack={props.callBack} name={props.name} value={props.value1}/>
+            <Radio callBack={props.callBack} name={props.name} value={props.value1} checked={"true"}/>
             <Radio callBack={props.callBack} name={props.name} value={props.value2}/>
             <Radio callBack={props.callBack} name={props.name} value={props.value3}/>
         </div>
@@ -41,7 +41,7 @@ function Radio(props) {
     return (
         <div>
             <input onChange={(e) => props.callBack(e.target.name, e.target.value.split(" ").join("_"))} id={id}
-                   type="radio" name={props.name} value={props.value}/>
+                   type="radio" name={props.name} value={props.value} checked={props.checked}/>
             <label htmlFor={id}>{props.value}</label>
         </div>
     )

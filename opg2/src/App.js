@@ -9,9 +9,9 @@ class App extends Component {
         super(props);
         this.state = {
             tabNumber: 0,
-            textName: "beach_boys",
+            textName: "steve_miller_band",
             imageCategory: "air",
-            soundCategory: "earth"
+            soundCategory: "air"
         };
 
         this.callBack = this.callBack.bind(this);
