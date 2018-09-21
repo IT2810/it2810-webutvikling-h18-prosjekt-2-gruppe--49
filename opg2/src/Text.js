@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class Text extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            error : null,
+            error: null,
             isLoaded: false,
             items: null,
             songName: props.songName
@@ -13,7 +13,7 @@ class Text extends Component {
     }
 
     componentDidMount() {
-        fetch ('text/' + this.state.songName + '.json')
+        fetch('text/' + this.state.songName + '.json')
             .then(res => res.json())
             .then(
                 (result) => {
@@ -39,13 +39,22 @@ class Text extends Component {
             return <div>Loading...</div>;
         } else {
             let text = "";
+
+            for (let j = 0; j < this.state.items.songVerses[0].length; j++) {
+                text += this.state.items.songVerses[0][j];
+                text += '\n';
+            }
+            text += '\n';
+
+            /*else {
+            let text = "";
             for (let i in this.state.items.songVerses) {
                 for (let j = 0; j < this.state.items.songVerses[i].length; j++) {
                     text += this.state.items.songVerses[i][j];
                     text += '\n';
                 }
                 text += '\n';
-            }
+            }*/
             return (
                 <div id="text">
                     {text}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class Image extends Component {
 
@@ -7,15 +7,15 @@ class Image extends Component {
         this.state = {
             isLoaded: false,
             items: null,
-            image: "air/dove"
+            imageCategory: props.imageCategory,
+            imageNumber: (Math.floor(Math.random() * 4 + 1))
         };
     }
 
     componentDidMount() {
-        fetch ("svg/"+this.state.image+".svg")
+        fetch("svg/" + this.state.imageCategory + "/" + this.state.imageNumber + ".svg")
             .then(res => res.text())
             .then((data) => {
-                console.log(data);
                 this.setState({
                     isLoaded: true,
                     items: data
@@ -25,10 +25,8 @@ class Image extends Component {
 
     render() {
         if (this.state.isLoaded) {
-            let image = this.state.items;
-            console.log(image);
             return (
-                <svg dangerouslySetInnerHTML={{__html: image}} />
+                <svg dangerouslySetInnerHTML={{__html: this.state.items}}/>
             );
         } else {
             return (

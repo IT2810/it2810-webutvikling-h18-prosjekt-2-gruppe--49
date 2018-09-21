@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import Text from "./Text.js";
-import Image from "./Image.js";
 import Display from './Display';
 import Controller from './Controller'
 
@@ -10,7 +8,10 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            songName: "beach_boys"
+            tabNumber: 1,
+            songName: "beach_boys",
+            imageCategory: "air",
+            soundCategory: "earth"
         };
     }
 
@@ -22,10 +23,9 @@ class App extends Component {
                     <h1 className="App-title">Group 49</h1>
                 </header>
                 <div className="App-body">
-                    <Display/>
+                    <Display tabNumber={this.state.tabNumber} imageCategory={this.state.imageCategory}
+                             songName={this.state.songName} soundCategory={this.state.soundCategory}/>
                     <Controller/>
-                    <Image/>
-                    <Text songName={this.state.songName}/>
                 </div>
             </div>
         )
