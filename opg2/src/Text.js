@@ -34,9 +34,9 @@ class Text extends Component {
     render() {
         const {error, isLoaded} = this.state;
         if (error) {
-            return <div>Error: {error.message}</div>;
+            return <div className="Display-text">Error: {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <div className="Display-text">Loading...</div>;
         } else {
             let text = "";
 
@@ -56,7 +56,7 @@ class Text extends Component {
                 text += '\n';
             }*/
             return (
-                <div id="text">
+                <div className="Display-text" id="text">
                     {text}
                 </div>
             );

@@ -17,8 +17,8 @@ class Display extends Component {
     render() {
         return (
             <div className="App-display">
-                <Image className="Display-image" imageCategory={this.state.imageCategory}/>
-                <Text className="Display-text" songName={this.state.songName}/>
+                <Image imageCategory={this.state.imageCategory}/>
+                <Text songName={this.state.songName}/>
                 <audio className="Display-audio" controls autoPlay>
                     <source src={"sound/"+this.state.soundCategory+"/1.mp3"} type="audio/mpeg"/>
                 </audio>
