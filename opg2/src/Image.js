@@ -6,35 +6,45 @@ class Image extends Component {
         super(props);
         this.state = {
             isLoaded: false,
-            items: null,
+            svg: null,
             imageCategory: props.imageCategory,
-            imageNumber: (Math.floor(Math.random() * 4 + 1))
+            imageNumber: props.imageNumber
         };
     }
 
     componentDidMount() {
-        fetch("svg/" + this.state.imageCategory + "/" + this.state.imageNumber + ".svg")
+        fetch("svg/" + this.props.imageCategory + "/" + this.props.imageNumber + ".svg")
             .then(res => res.text())
             .then((data) => {
                 this.setState({
                     isLoaded: true,
-                    items: data
+                    svg: data
                 });
             },)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            fetch("svg/" + this.props.imageCategory + "/" + this.props.imageNumber + ".svg")
+                .then(res => res.text())
+                .then((data) => {
+                    this.setState({
+                        isLoaded: true,
+                        svg: data
+                    });
+                },)
+        }
     }
 
     render() {
         if (this.state.isLoaded) {
             return (
-                <svg className="Display-image" dangerouslySetInnerHTML={{__html: this.state.items}}/>
+                <svg className="Display-image" dangerouslySetInnerHTML={{__html: this.state.svg}}/>
             );
         } else {
-            return (
-                "Loading..."
-            )
+            return <div>"Loading..."</div>
         }
     }
-
 }
 
 export default Image;

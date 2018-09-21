@@ -5,64 +5,55 @@ class Text extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: null,
             isLoaded: false,
-            items: null,
-            songName: props.songName
+            text: null
         };
     }
 
     componentDidMount() {
-        fetch('text/' + this.state.songName + '.json')
+        fetch('text/' + this.props.textName + '.json')
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        items: result
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
+                        text: result
                     });
                 }
             )
     }
 
-    render() {
-        const {error, isLoaded} = this.state;
-        if (error) {
-            return <div className="Display-text">Error: {error.message}</div>;
-        } else if (!isLoaded) {
-            return <div className="Display-text">Loading...</div>;
-        } else {
-            let text = "";
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            fetch('text/' + this.props.textName + '.json')
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        this.setState({
+                            isLoaded: true,
+                            text: result
+                        });
+                    }
+                )
+        }
+    }
 
-            for (let j = 0; j < this.state.items.songVerses[0].length; j++) {
-                text += this.state.items.songVerses[0][j];
+    render() {
+        if (this.state.isLoaded) {
+            let text = "";
+            for (let j = 0; j < this.state.text.songVerses[this.props.textNumber].length; j++) {
+                text += this.state.text.songVerses[this.props.textNumber][j];
                 text += '\n';
             }
-            text += '\n';
-
-            /*else {
-            let text = "";
-            for (let i in this.state.items.songVerses) {
-                for (let j = 0; j < this.state.items.songVerses[i].length; j++) {
-                    text += this.state.items.songVerses[i][j];
-                    text += '\n';
-                }
-                text += '\n';
-            }*/
             return (
                 <div className="Display-text" id="text">
                     {text}
                 </div>
             );
+        } else {
+            return <div className="Display-text">Loading...</div>;
         }
     }
-
 }
 
 export default Text;
