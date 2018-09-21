@@ -14,10 +14,8 @@
 
 .App-body {
   display: grid;
-  grid-template-columns: 75%;
-  grid-template-rows: 20% 80%;
-  min-height: 500px;
-  height: 70%;
+  grid-template-rows: 100px auto;
+  min-height: 70%;
   width: 100%;
   grid-template-areas:
     "a"
@@ -39,10 +37,14 @@
 .App-display {
   grid-area: b;
   display: grid;
+  height: 100%;
   grid-template-areas:
     "aa ab"
     "aa ac";
+  justify-content: space-around;
+  align-items: flex-start;
   margin-top: 10px;
+  margin-bottom: 15px;
   padding: 15px;
   background-color: #fafafa;
   box-shadow: 0 2px 5px 0 #555;
@@ -64,6 +66,8 @@
 
 .Display-image {
   grid-area: aa;
+  height: 100%;
+  width: 100%;
 }
 
 .Display-text {
@@ -74,10 +78,13 @@
   grid-area: ac;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
   [class="App-body"] {
     grid-template-columns: 95%;
   }
+}
+
+@media only screen and (max-width: 550px) {
   [class="App-controller"] {
     justify-content: space-between;
   }
@@ -85,9 +92,11 @@
     width: auto;
   }
   [class="App-display"] {
+    grid-template-rows: 300px auto;
     grid-template-areas:
       "aa"
       "ab"
       "ac";
+    justify-content: center;
   }
 }
