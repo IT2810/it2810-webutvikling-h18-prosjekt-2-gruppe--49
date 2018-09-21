@@ -28,7 +28,7 @@ function Radio (props) {
     return (
         <div>
             <input id={id} type="radio" name={props.name} value={props.value} />
-            <label for={id}>{props.value}</label>
+            <label htmlFor={id}>{props.value}</label>
         </div>
     )
 }
