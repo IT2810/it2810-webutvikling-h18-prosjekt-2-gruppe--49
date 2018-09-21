@@ -24,6 +24,7 @@
 
 .App-controller {
   grid-area: a;
+  display: flex;
   border-style: solid;
   border-width: 2px;
 }
@@ -36,4 +37,9 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.Controller-RadioGroup {
+  width: 200px;
+  text-align: left;
 }
