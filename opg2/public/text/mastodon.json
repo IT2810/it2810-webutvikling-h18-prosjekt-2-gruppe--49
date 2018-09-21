@@ -2,8 +2,7 @@
   "songName" : "Sleeping Giant",
   "bandName" : "Mastodon",
   "songVerses" : [
-    {
-      "verse0": [
+      [
         "Earth has burst",
         "Mountain flames",
         "Moon beheld",
@@ -12,7 +11,7 @@
         "Has left its nest"
       ],
 
-      "verse1": [
+      [
         "Bulls roar loud",
         "The fearless fall",
         "Wooden vessel",
@@ -21,7 +20,7 @@
         "In my grave"
       ],
 
-      "verse2": [
+      [
         "Eyes of grace",
         "Kill again",
         "Trapped in maze",
@@ -30,12 +29,11 @@
         "Perish the land"
       ],
 
-      "verse3": [
+      [
         "A vast calm wilderness",
         "The call to adventure comes",
         "Lead and land atop this rock",
         "Infinite path carved with unrivaled skill"
       ]
-    }
   ]
 }
