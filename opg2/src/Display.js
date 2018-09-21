@@ -19,7 +19,7 @@ class Display extends Component {
             <div className="App-display">
                 <Image imageCategory={this.state.imageCategory}/>
                 <Text songName={this.state.songName}/>
-                <audio controls autoPlay>
+                <audio className="Display-audio" controls autoPlay>
                     <source src={"sound/"+this.state.soundCategory+"/1.mp3"} type="audio/mpeg"/>
                 </audio>
             </div>

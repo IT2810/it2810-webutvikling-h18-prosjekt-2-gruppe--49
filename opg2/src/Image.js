@@ -26,7 +26,7 @@ class Image extends Component {
     render() {
         if (this.state.isLoaded) {
             return (
-                <svg dangerouslySetInnerHTML={{__html: this.state.items}}/>
+                <svg className="Display-image" dangerouslySetInnerHTML={{__html: this.state.items}}/>
             );
         } else {
             return (
