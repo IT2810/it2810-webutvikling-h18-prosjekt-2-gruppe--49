@@ -41,8 +41,8 @@ class Text extends Component {
     render() {
         if (this.state.isLoaded) {
             let text = "";
-            for (let j = 0; j < this.state.text.songVerses[this.props.textNumber].length; j++) {
-                text += this.state.text.songVerses[this.props.textNumber][j];
+            for (let i = 0; i < this.state.text.songVerses[this.props.textNumber].length; i++) {
+                text += this.state.text.songVerses[this.props.textNumber][i];
                 text += '\n';
             }
             return (
@@ -51,7 +51,7 @@ class Text extends Component {
                 </div>
             );
         } else {
-            return <div className="Display-text">Loading...</div>;
+            return <div className="Display-text">Loading text...</div>;
         }
     }
 }

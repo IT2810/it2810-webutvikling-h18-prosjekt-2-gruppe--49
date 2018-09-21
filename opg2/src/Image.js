@@ -6,9 +6,7 @@ class Image extends Component {
         super(props);
         this.state = {
             isLoaded: false,
-            svg: null,
-            imageCategory: props.imageCategory,
-            imageNumber: props.imageNumber
+            svg: null
         };
     }
 
@@ -42,7 +40,7 @@ class Image extends Component {
                 <svg className="Display-image" dangerouslySetInnerHTML={{__html: this.state.svg}}/>
             );
         } else {
-            return <div>"Loading..."</div>
+            return <div className="Display-text">"Loading image..."</div>
         }
     }
 }
