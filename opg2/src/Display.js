@@ -56,7 +56,6 @@ class Display extends Component {
                 <button className="Display-prevButton" onClick={this.previous}>&#8249;</button>
                 <Image imageCategory={this.state.imageCategory} imageNumber={this.state.currentImage}/>
                 <Text textName={this.state.textName} textNumber={this.state.currentText}/>
-                {console.log(this.state)}
                 <audio className="Display-audio"
                        src={"sound/" + this.state.soundCategory + "/" + this.state.currentSound + ".mp3"} controls
                        autoPlay loop/>
