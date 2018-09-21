@@ -17,7 +17,7 @@
   grid-template-columns: 75%;
   grid-template-rows: 20% 80%;
   min-height: 500px;
-  height: 70vh;
+  height: 70%;
   width: 100%;
   grid-template-areas:
     "a"
@@ -28,6 +28,10 @@
 .App-controller {
   grid-area: a;
   display: flex;
+  padding-right: 3.5%;
+  padding-left: 1.5%;
+  align-items: center;
+  justify-content: center;
   background-color: #fafafa;
   box-shadow: 0 2px 5px 0 #555;
 }
@@ -35,7 +39,7 @@
 .App-display {
   grid-area: b;
   margin-top: 10px;
-  padding: 10px;
+  padding: 15px;
   background-color: #fafafa;
   box-shadow: 0 2px 5px 0 #555;
 }
@@ -52,4 +56,16 @@
 .Controller-Header {
   margin-left: 20px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+  [class="App-body"] {
+    grid-template-columns: 95%;
+  }
+  [class="App-controller"] {
+    justify-content: space-between;
+  }
+  [class="Controller-RadioGroup"] {
+    width: auto;
+  }
 }
