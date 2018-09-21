@@ -4,7 +4,9 @@ class Controller extends Component {
     render() {
         return (
             <div className="App-controller">
-                {/* This is where the image selectors etc. will be */}
+                <RadioGroup name="Image" value1="Air" value2="Land" value3="Sea" />
+                <RadioGroup name="Sound" value1="Wind" value2="Ground" value3="Waves" />
+                <RadioGroup name="Text" value1="Steve Miller Band" value2="Mastodon" value3="Beach Boys" />
             </div>
         )
     }
