@@ -37,11 +37,13 @@
   grid-area: b;
   display: grid;
   height: 100%;
+  grid-template-columns: 50px auto 350px 50px;
   grid-template-areas:
-    "aa ab"
-    "aa ac";
+    "ad aa ab ae"
+    "ad aa ac ae";
   justify-content: space-around;
-  align-items: flex-start;
+  justify-items: center;
+  align-items: flex-end;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 15px;
@@ -67,6 +69,7 @@
   grid-area: aa;
   height: 100%;
   width: 100%;
+  max-width: 300px;
 }
 
 .Display-text {
@@ -75,6 +78,17 @@
 
 .Display-audio {
   grid-area: ac;
+}
+
+.Display-prevButton {
+  grid-area: ad;
+  width: 35px;
+  height: 30px;
+}
+.Display-nextButton {
+  grid-area: ae;
+  width: 35px;
+  height: 30px;
 }
 
 @media only screen and (max-width: 650px) {
@@ -92,10 +106,12 @@
   }
   [class="App-display"] {
     grid-template-rows: 300px auto;
+    grid-template-columns: auto;
     grid-template-areas:
-      "aa"
-      "ab"
-      "ac";
+      "aa aa"
+      "ab ab"
+      "ad ae"
+      "ac ac";
     justify-content: center;
   }
 }
