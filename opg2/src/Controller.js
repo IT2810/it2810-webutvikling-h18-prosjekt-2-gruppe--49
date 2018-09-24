@@ -68,7 +68,7 @@ function Radio(props) {
             <input
                 onChange={
                     (e) => {
-                        props.callBack(e.target.name, e.target.value.split(" ").join("_"));
+                        props.callBack(e.target.name, e.target.value.split(" ").join("_").toLowerCase());
                         props.setValue(e.target.name, e.target.value)
                     }
                 }
